@@ -62,5 +62,4 @@ $IPT -N port-scanning
 $IPT -A port-scanning -p tcp --tcp-flags SYN,ACK,FIN,RST RST -m limit --limit 1/s --limit-burst 2 -j RETURN
 $IPT -A port-scanning -j DROP
 
-/sbin/iptables-save > /home/kfalia-f/backups/ip_prom
-cat /home/kfalia-f/backups/ip_prom > /etc/sysconfig/iptables
+/sbin/iptables-save > /etc/sysconfig/iptables
