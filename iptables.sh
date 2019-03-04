@@ -55,7 +55,7 @@ $IPT -A INPUT -p tcp --tcp-flags RST RST -j DROP
 
 ### SSH brute-force protection ### 
 $IPT -A INPUT -p tcp --dport 50684 -m conntrack --ctstate NEW -m recent --set
-$IPT -A INPUT -p tcp --dport 50484 -m conntrack --ctstate NEW -m recent --update --seconds 60 --hitcount 10 -j DROP
+$IPT -A INPUT -p tcp --dport 50684 -m conntrack --ctstate NEW -m recent --update --seconds 60 --hitcount 10 -j DROP
 
 ### Protection against port scanning ### 
 $IPT -N port-scanning
